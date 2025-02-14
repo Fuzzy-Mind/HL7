@@ -1,3 +1,5 @@
+#Host data packet reader
+
 import sys
 import serial
 import time
