@@ -1,5 +1,3 @@
-#Host data packet reader
-
 import sys
 import serial
 import time
@@ -13,7 +11,8 @@ dbValues = {
 	"calibOxygen1": 0,
 	"calibOxygen2": 0,
 	"alarmLed": 0,
-	"heaterPwm": 0
+	"heaterPwm": 0,
+	"runMode": 0
 	}
 
 
@@ -58,6 +57,9 @@ while(1):
 		
 		setTemperatureData = ((incomingPacket[11] << 8) + incomingPacket[10]) / 100
 		dbValues["setTemperature"] = setTemperatureData
+		
+		runMode = incomingPacket[12]
+		dbValues["runMode"] = runMode
 		
 		setHumidityData = (incomingPacket[14] << 8) + incomingPacket[13]
 		dbValues["setHumidity"] = setHumidityData
