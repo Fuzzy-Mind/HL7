@@ -102,13 +102,13 @@ f = open("/boot/serialNo.txt", 'r')
 serialNoBase = int(f.read())
 f.close()
 
-broker = '209.38.224.156'
-port = 1883
+broker = '***.***.***.***'
+port = ****
 topic = str(serialNoBase)
 jsonValues["device"]["serial"] = topic
 client_id = ""
-username = 'hl7'
-password = 'hl7.0423'
+username = '****'
+password = '****'
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(wifiLed, GPIO.OUT)
